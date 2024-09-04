@@ -1,0 +1,147 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hospital Dashboard</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Hospital Dashboard</h1>
+        </header>
+
+        <div class="container">
+            <!-- Bed Management Section -->
+            <section>
+                <h2>Bed Management</h2>
+                <!-- ICU Bed Count -->
+                <div>
+                    <p>Available ICU Beds: <span id="availableIcuBeds">5</span></p>
+                    <button id="updateIcuBeds">Update ICU Beds</button>
+                </div>
+                <!-- General Ward Bed Count -->
+                <div>
+                    <p>Available General Ward Beds: <span id="availableGeneralBeds">15</span></p>
+                    <button id="updateGeneralBeds">Update General Ward Beds</button>
+                </div>
+            </section>
+
+            <!-- Patient Queue Section -->
+            <section>
+                <h2>Patient Queue Management</h2>
+                <p>Patients in Queue: <span id="patientsInQueueCount">0</span></p>
+                <button id="updatePatientQueue">Update Patient Queue</button>
+            </section>
+
+            <!-- Inventory Management Section -->
+            <section>
+                <h2>Inventory Management</h2>
+                <button id="manageInventory">Manage Inventory</button>
+            </section>
+
+            <!-- Section for Managing OPD Requests -->
+            <section>
+                <h2>Manage OPD Requests</h2>
+                <div id="opdRequestSection">
+                    <p>No OPD requests at the moment.</p>
+                </div>
+                <button id="approveOpdRequest">Approve OPD Request</button>
+                <button id="rejectOpdRequest">Reject OPD Request</button>
+            </section>
+
+            <!-- Section for Patient Admission -->
+            <section>
+                <h2>Patient Admission</h2>
+                <button id="openAdmissionForm">Open Admission Form</button>
+            </section>
+
+            <!-- Patient Admission Form (Initially Hidden) -->
+            <section id="admissionFormSection" style="display: none;">
+                <h2>Patient Admission Form</h2>
+                <form id="patientAdmissionForm">
+                    <div class="form-group">
+                        <label for="patientName">Patient Name:</label>
+                        <input type="text" id="patientName" placeholder="Enter patient's full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" placeholder="Enter patient's age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact Number:</label>
+                        <input type="tel" id="contact" placeholder="Enter contact number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="condition">Medical Condition:</label>
+                        <textarea id="condition" rows="4" placeholder="Describe medical condition" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="bedType">Bed Type:</label>
+                        <select id="bedType" required>
+                            <option value="" disabled selected>Select Bed Type</option>
+                            <option value="General">General</option>
+                            <option value="ICU">ICU</option>
+                            <option value="Private">Private</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="admissionDate">Admission Date:</label>
+                        <input type="date" id="admissionDate" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Admit Patient</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                // Update ICU Beds
+                document.getElementById('updateIcuBeds').addEventListener('click', function() {
+                    let availableIcuBeds = document.getElementById('availableIcuBeds');
+                    let currentIcuBeds = parseInt(availableIcuBeds.textContent);
+                    let newIcuBeds = prompt("Enter the new number of available ICU beds:", currentIcuBeds);
+
+                    if (newIcuBeds !== null && !isNaN(newIcuBeds)) {
+                        availableIcuBeds.textContent = newIcuBeds;
+                        alert("ICU beds updated! New ICU beds: " + newIcuBeds);
+                    } else {
+                        alert("Please enter a valid number for ICU beds.");
+                    }
+                });
+
+                // Update General Ward Beds
+                document.getElementById('updateGeneralBeds').addEventListener('click', function() {
+                    let availableGeneralBeds = document.getElementById('availableGeneralBeds');
+                    let currentGeneralBeds = parseInt(availableGeneralBeds.textContent);
+                    let newGeneralBeds = prompt("Enter the new number of available General Ward beds:", currentGeneralBeds);
+
+                    if (newGeneralBeds !== null && !isNaN(newGeneralBeds)) {
+                        availableGeneralBeds.textContent = newGeneralBeds;
+                        alert("General Ward beds updated! New General Ward beds: " + newGeneralBeds);
+                    } else {
+                        alert("Please enter a valid number for General Ward beds.");
+                    }
+                });
+            });
+
+            // Show/Hide the Admission Form
+            document.getElementById('openAdmissionForm').addEventListener('click', function() {
+                const formSection = document.getElementById('admissionFormSection');
+                formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
+            });
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,154 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #ffffff); /* Background gradient */
+    color: #2d4059;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    text-align: center; /* Center-align text */
+    padding: 20px;
+    background-color: #004080; /* Dark blue background */
+    color: #ffffff; /* White text */
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 2em; /* Adjust size as needed */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0f7fa; /* Light blue text for contrast */
+}
+
+/* Container Styling */
+.container {
+    max-width: 800px; /* Wider container */
+    width: 100%; /* Ensure it fills the available width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    background-color: #ffffff; /* White background for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    border-radius: 8px; /* Rounded corners for a modern look */
+}
+
+/* Section Styling */
+section {
+    background-color: #f8f9fa; /* Light grey background for sections */
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    margin-bottom: 20px; /* Space between sections */
+}
+
+/* Header and Sub-header Styling */
+h1, h2 {
+    color: #2d4059; /* Darker blue-grey for a professional touch */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+    background-color: #004080; /* Dark blue background */
+    color: #ffffff; /* White text */
+    text-align: center; /* Center align text */
+    padding: 20px;
+    position: fixed; /* Fix at the bottom of the page */
+    bottom: 0;
+    width: 100%; /* Full width */
+    font-size: 14px;
+}
+
+footer a {
+    color: #e0f7fa; /* Light blue color for links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Form Structure */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Labels and Form Elements Styling */
+label, select, input, textarea, button {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+select, input, textarea {
+    padding: 12px;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc; /* Subtle borders */
+    background-color: #ffffff; /* Pure white background for form elements */
+}
+
+/* Styling for Text Areas */
+textarea {
+    resize: none;
+    height: 100px; /* Fixed height */
+}
+
+/* Button Styling */
+button {
+    padding: 12px;
+    border: none;
+    background-color: #4caf50; /* Green for action buttons */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover for effect */
+}
+
+button:focus, input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Focused element blue border */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow */
+}
+
+/* General Form Text Color */
+label {
+    color: #2d4059;
+}
+/* Footer Styling */
+footer {
+    background-color: #004080; /* Dark blue background */
+    color: #ffffff; /* White text */
+    text-align: center; /* Center align text */
+    padding: 20px;
+    position: fixed; /* Fix at the bottom of the page */
+    bottom: 0;
+    width: 100%; /* Full width */
+    font-size: 14px;
+}
+
+footer a {
+    color: #e0f7fa; /* Light blue color for links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

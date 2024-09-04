@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Patient Dashboard</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>OPD Registration</h2>
+            <form id="opdRegistrationForm">
+                <div class="form-group">
+                    <label for="patientName">Name:</label>
+                    <input type="text" id="patientName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientAge">Age:</label>
+                    <input type="number" id="patientAge" placeholder="Enter your age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientCondition">Medical Condition:</label>
+                    <textarea id="patientCondition" rows="4" placeholder="Describe your condition" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Register for OPD</button>
+                </div>
+            </form>
+
+            <p id="opdStatus">Your OPD status: <span id="opdRequestStatus">Pending</span></p>
+        </section>
+    </main>
+
+    <script>
+        // Submit OPD registration request
+        document.getElementById('opdRegistrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('patientName').value;
+            const age = document.getElementById('patientAge').value;
+            const condition = document.getElementById('patientCondition').value;
+
+            // Send request to hospital staff (simulated here as local storage)
+            const opdRequest = { name, age, condition, status: 'Pending' };
+            localStorage.setItem('opdRequest', JSON.stringify(opdRequest));
+
+            alert('OPD registration request submitted.');
+        });
+
+        // Check for OPD status
+        function checkOpdStatus() {
+            const opdRequest = JSON.parse(localStorage.getItem('opdRequest'));
+            if (opdRequest) {
+                document.getElementById('opdRequestStatus').textContent = opdRequest.status;
+            }
+        }
+
+        // Check OPD status every time the page loads
+        window.onload = checkOpdStatus;
+    </script>
+</body>
+</html>
